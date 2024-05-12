@@ -1,0 +1,30 @@
+function play_rock_paper_scissors()
+  moves = ["rock", "paper", "scissors"]
+  computer_move = moves[rand(1:3)]
+  human_move = Base.prompt("Please enter 'rock', 'paper', or 'scissors': ")
+
+  print("Rock...")
+  flush(stdout)
+  sleep(1)
+  print("Paper...")
+  flush(stdout)
+  sleep(1)
+  print("Scissors...")
+  flush(stdout)
+  sleep(1)
+
+  println("Shoot\n")
+  flush(stdout)
+
+  if computer_move == human_move
+      println("Tie, try again")
+  elseif (computer_move == "rock" && human_move == "paper") ||
+         (computer_move == "paper" && human_move == "scissors") ||
+         (computer_move == "scissors" && human_move == "rock")
+      println("You won, the computer lost with $computer_move")
+  else
+      println("You lost, the computer won with $computer_move")
+  end
+end
+
+play_rock_paper_scissors()
